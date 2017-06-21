@@ -100,7 +100,6 @@ bool GFrame::eventFilter(QObject *watched, QEvent *event)
     QFont pix12 = QFont(roboto->family(), 12);
     if (event->type() == event->FocusIn && watched == lineEdit)//Clicked into lineedit
     {
-        lineEdit->setFocus();
         qDebug() << "Focused in  " << objectName();
 
         QParallelAnimationGroup *group = new QParallelAnimationGroup;
@@ -130,7 +129,6 @@ bool GFrame::eventFilter(QObject *watched, QEvent *event)
     }
     else if (event->type() == event->FocusOut && watched == lineEdit && lineEdit->text() == "")//Clicked somewhere else
     {
-        lineEdit->clearFocus();
         qDebug() << "Focused out " << objectName();
 
         QParallelAnimationGroup *group = new QParallelAnimationGroup;
